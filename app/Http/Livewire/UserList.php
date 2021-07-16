@@ -16,7 +16,7 @@ class UserList extends Component
     {
         return view($view, 
         [
-            'users' => User::paginate(2),
+            'users' => User::paginate(5),
         ]);
     }
 
@@ -28,5 +28,13 @@ class UserList extends Component
     public function buttonUpdate($id)
     {
         return $this->redirect('/update/'.$id);
+    }
+
+    public function buttonDelete($id)
+    {
+        if($id){
+            User::where('id',$id)->delete();
+            session()->flash('message', 'Usuário deletado com sucesso!');
+        }
     }
 }

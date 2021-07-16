@@ -2,6 +2,13 @@
 
 <a class="btn btn-primary" wire:click="buttonCreate()">cadastrar</a>
 
+    <div>
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
 
     <table class="table">
         <tr>

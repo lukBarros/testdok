@@ -21,8 +21,14 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
-                    <a class="btn btn-primary" wire:click="buttonUpdate({{ $user->id }})">Editar</a>
-                    <a class="btn btn-danger" wire:click="buttonDelete({{ $user->id }})">Deletar</a>
+                    @guest
+
+                    @else
+                        @if ( Auth::user()->id == $user->id )
+                            <a class="btn btn-primary" wire:click="buttonUpdate({{ $user->id }})">Editar</a>
+                            <a class="btn btn-danger" wire:click="buttonDelete({{ $user->id }})">Deletar</a>
+                        @endif
+                    @endguest
                 </td>    
             </ŧr>
         @endforeach

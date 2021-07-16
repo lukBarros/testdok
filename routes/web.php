@@ -14,7 +14,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [UserController::class, 'index']);
-Route::get('/create', [UserController::class, 'create']);
+Route::get('/',          [UserController::class, 'index']);
+Route::get('/create',    [UserController::class, 'create']);
+Route::get('/update/{id}', [UserController::class, 'update']);
 
 Auth::routes();

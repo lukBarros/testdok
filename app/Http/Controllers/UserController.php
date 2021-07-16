@@ -16,13 +16,24 @@ class UserController extends Controller
         return view('user.index');
     }
 
-     /**
-     * Listing users
+    /**
+     * Create users
      *
      * @return \Illuminate\View\View
      */
     public function create()
     {
         return view('user.create');
+    }
+
+
+    /**
+     * Create users
+     *
+     * @return \Illuminate\View\View
+     */
+    public function update($id)
+    {
+        return view('user.update', ['id' => $id]);
     }
 }

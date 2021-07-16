@@ -12,11 +12,16 @@ class UserList extends Component
 
     protected $paginationTheme = 'bootstrap';    
 
-    public function render()
+    public function render($view = 'livewire.user-list')
     {
-        return view('livewire.user-list', 
+        return view($view, 
         [
             'users' => User::paginate(2),
         ]);
+    }
+
+    public function buttonCreate()
+    {
+        return $this->redirect('/create');
     }
 }

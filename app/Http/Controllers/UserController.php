@@ -15,4 +15,14 @@ class UserController extends Controller
     {
         return view('user.index');
     }
+
+     /**
+     * Listing users
+     *
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
+        return view('user.create');
+    }
 }

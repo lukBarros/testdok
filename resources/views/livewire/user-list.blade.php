@@ -1,4 +1,8 @@
 <div>
+
+<a class="btn btn-primary" wire:click="buttonCreate()">cadastrar</a>
+
+
     <table class="table">
         <tr>
             <th>Nome</th>

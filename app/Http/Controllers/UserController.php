@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -34,6 +36,12 @@ class UserController extends Controller
      */
     public function update($id)
     {
+        if(!Auth::check() ||  Auth()->user()->id != $id)
+        {
+            session()->flash('message', 'Não é possível editar esse usuário!');
+            return Redirect::to('/');
+        }
+
         return view('user.update', ['id' => $id]);
     }
 }

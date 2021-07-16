@@ -24,4 +24,9 @@ class UserList extends Component
     {
         return $this->redirect('/create');
     }
+
+    public function buttonUpdate($id)
+    {
+        return $this->redirect('/update/'.$id);
+    }
 }

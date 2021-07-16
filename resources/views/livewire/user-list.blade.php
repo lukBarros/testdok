@@ -13,7 +13,9 @@
             <tr>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td></td>    
+                <td>
+                    <a class="btn btn-primary" wire:click="buttonUpdate({{ $user->id }})">Editar</a>
+                </td>    
             </ŧr>
         @endforeach
     </table>
